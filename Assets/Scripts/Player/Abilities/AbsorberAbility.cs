@@ -52,7 +52,7 @@ namespace ECO.Player
         private void AbsorbNearbyEnergy()
         {
             Debug.Log("AbsorbNearbyEnergy");
-            Collider[] energySources = Physics.OverlapSphere(transform.position, absorptionRange, energySourceLayer);
+           /* Collider[] energySources = Physics.OverlapSphere(transform.position, absorptionRange, energySourceLayer);
 
             foreach (Collider source in energySources)
             {
@@ -61,7 +61,7 @@ namespace ECO.Player
                     energySystem.AddEnergy(absorptionRate * Time.deltaTime);
                     Debug.Log("Absorbing energy from: " + source.name);
                 }
-            }
+            }*/
         }
     }
 }

@@ -38,7 +38,8 @@ namespace ECO.Player
 
         private void PurifyArea()
         {
-            Collider[] contaminatedAreas = Physics.OverlapSphere(transform.position, irradiationRange, contaminationLayer);
+            Debug.Log("IrradiateAbility");
+            /*Collider[] contaminatedAreas = Physics.OverlapSphere(transform.position, irradiationRange, contaminationLayer);
 
             foreach (Collider area in contaminatedAreas)
             {
@@ -49,7 +50,7 @@ namespace ECO.Player
                     Destroy(area.gameObject);
 
                 }
-            }
+            }*/
         }
     }
 }

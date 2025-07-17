@@ -55,6 +55,17 @@ MonoBehaviour:
   inputManager: {fileID: 0}
   energySystem: {fileID: 0}
   movementSystem: {fileID: 0}
+  mainCamera: {fileID: 0}
+  cameraTarget: {fileID: 0}
+  mouseSensitivity: 2
+  verticalLookLimit: 80
+  invertY: 0
+  deadZone: 0.1
+  accelerationTime: 0.1
+  decelerationTime: 0.15
+  strafeMode: 0
+  rotationSpeed: 10
+  smoothRotation: 1
 --- !u!114 &2646553651650494730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +171,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &3436158768231694927
 CapsuleCollider:

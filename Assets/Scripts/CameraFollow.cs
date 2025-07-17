@@ -11,6 +11,8 @@ public class CameraFollow : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private Vector3 currentOffset;
 
+
+
     void Start()
     {
         if (target == null) return;
@@ -21,15 +23,17 @@ public class CameraFollow : MonoBehaviour
     {
         if (target == null) return;
 
-        // Calcula la posición deseada con offset (puede adaptarse según la dirección del jugador si se desea)
-        Vector3 desiredPosition = target.position + currentOffset;
+        // Calcula el offset rotado según la rotación del jugador
+        Vector3 rotatedOffset = target.rotation * offset;
+        Vector3 desiredPosition = target.position + rotatedOffset;
 
-        // Suaviza el movimiento (como en Journey, no es brusco)
+        // Suaviza la posición de la cámara
         Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime);
         transform.position = smoothedPosition;
 
-        // Interpolación suave del lookAt para que no sea brusco
+        // Hace que la cámara siempre mire al jugador desde atrás
         Quaternion desiredRotation = Quaternion.LookRotation(target.position - transform.position);
         transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, Time.deltaTime / rotationSmoothTime);
+
     }
 }
