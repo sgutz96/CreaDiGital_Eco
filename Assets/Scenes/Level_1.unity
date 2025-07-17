@@ -502,6 +502,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3878381732960091202, guid: 8beb281446056584b93ab3c21d3cd554,
+        type: 3}
+      propertyPath: jumpForce
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878381732960091202, guid: 8beb281446056584b93ab3c21d3cd554,
+        type: 3}
+      propertyPath: floatSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878381732960091202, guid: 8beb281446056584b93ab3c21d3cd554,
+        type: 3}
+      propertyPath: glideSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4198092108520459550, guid: 8beb281446056584b93ab3c21d3cd554,
         type: 3}
       propertyPath: m_Name

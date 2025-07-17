@@ -173,7 +173,7 @@ namespace ECO.Player
         void HandleCharacterRotation()
         {
             // Solo rotar el personaje si no está en modo strafe y se está moviendo
-            if (!strafeMode && smoothedMovementInput.magnitude > 0.1f)
+            if (!strafeMode && smoothedMovementInput.y > 0.1f)
             {
                 Vector3 moveDirection = CalculateMovementDirection(smoothedMovementInput);
 
@@ -191,6 +191,7 @@ namespace ECO.Player
                     }
                 }
             }
+
         }
 
         void HandleJumpAndGlide()
@@ -260,7 +261,7 @@ namespace ECO.Player
 
         public void SetStrafeMode(bool enabled)
         {
-            strafeMode = enabled;
+            strafeMode = true;
         }
 
         public void SetMouseSensitivity(float sensitivity)
