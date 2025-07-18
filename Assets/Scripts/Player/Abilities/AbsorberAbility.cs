@@ -6,34 +6,72 @@ namespace ECO.Player
     public class AbsorberAbility : MonoBehaviour, IEcoAbility
     {
         [Header("Absorber Settings")]
-        public float absorptionRange = 5f;
-        public float absorptionRate = 20f;
-        public LayerMask energySourceLayer = 1;
+        public float irradiationRange = 3f;
+        public float energyCost = 15f;
+        public LayerMask contaminationLayer = 1;
 
         private EcoEnergySystem energySystem;
-        private bool isAbsorbing;
+
+        public GameObject absorptionColliderObject;
+        private Collider absorptionCollider;
+
+        private AbsorberColliderHandler handler;
 
         void Start()
         {
             energySystem = GetComponent<EcoEnergySystem>();
+            FindAbsorptionCollider();
+        }
+
+        void FindAbsorptionCollider()
+        {
+            // Buscar el collider en la escena con el tag específico
+            absorptionColliderObject = GameObject.FindGameObjectWithTag("AbsorberAbilityTag");
+            
+            if (absorptionColliderObject != null)
+            {
+                absorptionCollider = absorptionColliderObject.GetComponent<Collider>();
+                
+                if (absorptionCollider != null)
+                {
+                    absorptionCollider.isTrigger = true;
+                    absorptionCollider.enabled = false; // Inicialmente desactivado
+
+                    // Agregar el script de detección de colisiones
+                    handler = absorptionColliderObject.GetComponent<AbsorberColliderHandler>();
+                    if (handler == null)
+                    {
+                        handler = absorptionColliderObject.AddComponent<AbsorberColliderHandler>();
+                    }
+                    
+                }
+                else
+                {
+                    Debug.LogError("El objeto con tag 'AbsorberAbilityTag' no tiene un Collider");
+                }
+            }
+            else
+            {
+                Debug.LogError("No se encontró un objeto con tag 'AbsorberAbilityTag' en la escena");
+            }
         }
 
         public bool CanExecute()
         {
-            return energySystem != null && energySystem.CurrentEnergy < energySystem.MaxEnergy;
+            return energySystem.ConsumeEnergy(energyCost);
         }
 
         public void Execute()
         {
-            if (CanExecute())
-            {
-                isAbsorbing = true;
-            }
+            AbsorbNearbyEnergy();
         }
 
         public void Stop()
         {
-            isAbsorbing = false;
+            if (handler != null)
+            {
+                handler.SetColliderEnabled(false);
+            }
         }
 
         public string GetAbilityName()
@@ -41,27 +79,14 @@ namespace ECO.Player
             return "Absorber";
         }
 
-        void Update()
+        private void AbsorbNearbyEnergy()
         {
-            if (isAbsorbing)
+           // Debug.Log("AbsorbNearbyEnergy");
+            if (handler != null)
             {
-                AbsorbNearbyEnergy();
+                handler.SetColliderEnabled(true);
             }
         }
 
-        private void AbsorbNearbyEnergy()
-        {
-            Debug.Log("AbsorbNearbyEnergy");
-           /* Collider[] energySources = Physics.OverlapSphere(transform.position, absorptionRange, energySourceLayer);
-
-            foreach (Collider source in energySources)
-            {
-                if (source.CompareTag("EnergySource"))
-                {
-                    energySystem.AddEnergy(absorptionRate * Time.deltaTime);
-                    Debug.Log("Absorbing energy from: " + source.name);
-                }
-            }*/
-        }
     }
 }

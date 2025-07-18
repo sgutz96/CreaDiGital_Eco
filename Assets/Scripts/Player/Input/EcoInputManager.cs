@@ -22,7 +22,7 @@ namespace ECO.Player
             keyboardBindings = new Dictionary<string, KeyCode>
             {
                 {"interact", KeyCode.E},
-                {"absorb", KeyCode.LeftShift},
+                {"absorb", KeyCode.M},
                 {"irradiate", KeyCode.Q},
                 {"connect", KeyCode.F},
                 {"shoot", KeyCode.LeftControl},

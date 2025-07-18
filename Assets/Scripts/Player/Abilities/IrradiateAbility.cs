@@ -38,19 +38,8 @@ namespace ECO.Player
 
         private void PurifyArea()
         {
-            Debug.Log("IrradiateAbility");
-            /*Collider[] contaminatedAreas = Physics.OverlapSphere(transform.position, irradiationRange, contaminationLayer);
-
-            foreach (Collider area in contaminatedAreas)
-            {
-                if (area.CompareTag("Contamination"))
-                {
-                    Debug.Log("Purifying: " + area.name);
-                    // Implement purification logic
-                    Destroy(area.gameObject);
-
-                }
-            }*/
+            //Debug.Log("IrradiateAbility");
+            
         }
     }
 }
