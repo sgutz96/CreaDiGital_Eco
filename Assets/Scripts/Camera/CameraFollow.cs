@@ -4,19 +4,15 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset = new Vector3(0, 5f, -10f);
+    public float DesfasYCam = 1.5f; // Esto hará que mire un poco por encima del jugador
     public float smoothTime = 0.3f;
     public float rotationSmoothTime = 0.5f;
-    public float distanceDamp = 2f;
 
     private Vector3 velocity = Vector3.zero;
-    private Vector3 currentOffset;
-
-
 
     void Start()
     {
         if (target == null) return;
-        currentOffset = offset;
     }
 
     void LateUpdate()
@@ -31,9 +27,11 @@ public class CameraFollow : MonoBehaviour
         Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime);
         transform.position = smoothedPosition;
 
-        // Hace que la cámara siempre mire al jugador desde atrás
-        Quaternion desiredRotation = Quaternion.LookRotation(target.position - transform.position);
-        transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, Time.deltaTime / rotationSmoothTime);
+        // Punto al que la cámara debe mirar, con un desplazamiento en Y
+        Vector3 lookAtTarget = target.position + new Vector3(0, DesfasYCam, 0);
 
+        // Suaviza la rotación para mirar hacia el punto
+        Quaternion desiredRotation = Quaternion.LookRotation(lookAtTarget - transform.position);
+        transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, Time.deltaTime / rotationSmoothTime);
     }
 }

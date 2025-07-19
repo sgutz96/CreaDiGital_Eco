@@ -10642,6 +10642,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EcoPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 7910371636056053022, guid: 8beb281446056584b93ab3c21d3cd554,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 114
+      objectReference: {fileID: 0}
     - target: {fileID: 8986658855720368251, guid: 8beb281446056584b93ab3c21d3cd554,
         type: 3}
       propertyPath: m_LocalPosition.x

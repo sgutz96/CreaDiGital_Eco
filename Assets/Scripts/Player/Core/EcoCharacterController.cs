@@ -70,7 +70,8 @@ namespace ECO.Player
             abilities = new Dictionary<string, IEcoAbility>
             {
                 {"absorb", GetComponent<AbsorberAbility>()},
-                {"irradiate", GetComponent<IrradiateAbility>()}
+                {"irradiate", GetComponent<IrradiateAbility>()},
+                {"interact", GetComponent<InteractAbility>()}
             };
         }
 
@@ -221,6 +222,12 @@ namespace ECO.Player
             if (inputManager.IsPressed("irradiate"))
             {
                 ExecuteAbility("irradiate");
+            }
+
+            // Irradiar - habilidad de activación
+            if (inputManager.IsPressed("interact"))
+            {
+                ExecuteAbility("interact");
             }
         }
 
