@@ -7,6 +7,10 @@ public class IrradiateHandler : MonoBehaviour
 {
     private IrradiateAbility irradiateAbility;
 
+    public LayerMask petrifiedLayer; // Para mayor claridad
+
+    public Material FrailejonMat; // Asigna la nueva textura desde el inspector
+
     public void SetIrradiateAbility(IrradiateAbility ability)
     {
         irradiateAbility = ability;
@@ -23,11 +27,22 @@ public class IrradiateHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        GameObject obj = other.gameObject;
 
-        if (other.CompareTag("Frailejon"))
+        // Verifica si el objeto está en el layer "Petrificado"
+        if (obj.layer == LayerMask.NameToLayer("Petrificado") && obj.CompareTag("Hongo"))
         {
-            Destroy(other.gameObject);
-            Debug.Log("Objeto de contaminación eliminado.");
+            // Cambiar textura (material)
+            Renderer renderer = obj.GetComponent<Renderer>();
+            if (renderer != null && FrailejonMat != null)
+            {
+                renderer.material = FrailejonMat;
+            }
+
+            // Cambiar el tag a "Untagged" y layer
+            obj.tag = "Untagged";
+            obj.layer = LayerMask.NameToLayer("Default");
+
         }
     }
 }

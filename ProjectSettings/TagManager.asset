@@ -12,6 +12,7 @@ TagManager:
   - InteractAbilityTag
   - Switch
   - Cielo
+  - IrradiateAbilityTag
   layers:
   - Default
   - TransparentFX

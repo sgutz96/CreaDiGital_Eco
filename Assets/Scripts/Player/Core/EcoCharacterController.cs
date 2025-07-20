@@ -219,9 +219,13 @@ namespace ECO.Player
             }
 
             // Irradiar - habilidad de activación
-            if (inputManager.IsPressed("irradiate"))
+            if (inputManager.IsHeld("irradiate"))
             {
                 ExecuteAbility("irradiate");
+            }
+            else
+            {
+                StopAbility("irradiate");
             }
 
             // Interact - habilidad de activación
