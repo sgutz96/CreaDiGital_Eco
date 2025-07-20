@@ -7,6 +7,11 @@ TagManager:
   - EnergySource
   - Contamination
   - AbsorberAbilityTag
+  - InteracAbilityTag
+  - Interactable
+  - InteractAbilityTag
+  - Switch
+  - Cielo
   layers:
   - Default
   - TransparentFX
@@ -14,8 +19,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Contamination
-  - 
+  - Absorbibles
+  - Interactable
   - 
   - 
   - 

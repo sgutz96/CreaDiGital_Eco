@@ -38,8 +38,8 @@ namespace ECO.Player
 
         private void PurifyArea()
         {
-            //Debug.Log("IrradiateAbility");
-            
+            Debug.Log("Irradiate");
+
         }
     }
 }

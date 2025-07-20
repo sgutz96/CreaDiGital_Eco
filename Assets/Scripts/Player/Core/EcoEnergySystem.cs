@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace ECO.Player
         public float regenRate = 10f;
         public float regenDelay = 2f;
 
+        [SerializeField]
         private float currentEnergy;
         private float lastDamageTime;
 
@@ -69,6 +71,11 @@ namespace ECO.Player
         public void IncreaseMaxOrbs(int amount)
         {
             maxEnergyOrbs += amount;
+        }
+
+        internal bool HasEnergy(float energyCost)
+        {
+            throw new NotImplementedException();
         }
     }
 }

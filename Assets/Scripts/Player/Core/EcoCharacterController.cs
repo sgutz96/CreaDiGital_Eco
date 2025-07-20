@@ -224,10 +224,11 @@ namespace ECO.Player
                 ExecuteAbility("irradiate");
             }
 
-            // Irradiar - habilidad de activación
+            // Interact - habilidad de activación
             if (inputManager.IsPressed("interact"))
             {
                 ExecuteAbility("interact");
+                
             }
         }
 

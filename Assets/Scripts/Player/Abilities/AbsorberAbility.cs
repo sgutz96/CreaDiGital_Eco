@@ -58,7 +58,7 @@ namespace ECO.Player
 
         public bool CanExecute()
         {
-            return energySystem.ConsumeEnergy(energyCost);
+            return energySystem.ConsumeEnergy(0);
         }
 
         public void Execute()

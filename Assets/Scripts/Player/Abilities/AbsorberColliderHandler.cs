@@ -6,7 +6,8 @@
         {
             private AbsorberAbility absorberAbility;
 
-            public void SetAbsorberAbility(AbsorberAbility ability)
+
+        public void SetAbsorberAbility(AbsorberAbility ability)
             {
                 absorberAbility = ability;
             }
@@ -23,20 +24,33 @@
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Objeto entro");
-            if (other.CompareTag("Contamination"))
-            {
-                Destroy(other.gameObject);
-                Debug.Log("Objeto de contaminación eliminado.");
-            }
 
-            /*if (absorberAbility == null || !absorberAbility.enabled) return;
+            
 
-            if (other.CompareTag("Contamination"))
-            {
-                Destroy(other.gameObject);
-                Debug.Log("Objeto de contaminación eliminado.");
-            }*/
+
+                if (other.CompareTag("Contamination"))
+                {
+                    Destroy(other.gameObject);
+                    Debug.Log("Objeto de contaminación eliminado.");
+                }
+                if (other.CompareTag("Cielo"))
+                {
+                    // Intentamos obtener el componente
+                    CieloBehavior cielo = other.GetComponent<CieloBehavior>();
+
+                    // Si no lo tiene, se lo agregamos
+                    if (cielo == null)
+                    {
+                        cielo = other.gameObject.AddComponent<CieloBehavior>();
+                        Debug.Log("Script 'CieloBehavior' agregado al objeto.");
+                    }
+
+                    // Llamamos a la función
+                    cielo.TemporarilyDeactivate(5f);
+                    Debug.Log("Cielo desactivado temporalmente.");
+                }
+            
+            
         }
     }
 }
