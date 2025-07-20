@@ -7,6 +7,7 @@ namespace ECO.Player
     {
         [Header("Puzzle Settings")]
         public List<SimpleSwitch> switches = new List<SimpleSwitch>();
+        
 
         [Header("Optional Action")]
         public GameObject objectToActivateWhenSolved; // Por ejemplo, una puerta o algo que se encienda
