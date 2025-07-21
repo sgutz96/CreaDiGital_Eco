@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.InputManagerEntry;
 
 namespace ECO.Player
 {
@@ -26,7 +25,6 @@ namespace ECO.Player
         public void FindIrradiate()
         {
             // Buscar el collider en la escena con el tag específico
-            irradiateObject = GameObject.FindGameObjectWithTag("IrradiateAbilityTag");
             irradiateObject.SetActive(false);
 
             if (irradiateObject != null)
@@ -36,7 +34,8 @@ namespace ECO.Player
                 if (irradiateCollider != null)
                 {
                     irradiateCollider.isTrigger = true;
-                    //irradiateCollider.enabled = false; // Inicialmente desactivado
+                    irradiateCollider.enabled = false; // Inicialmente desactivado
+                    irradiateObject.SetActive(false);
 
                     // Agregar el script de detección de colisiones
                     handler = irradiateObject.GetComponent<IrradiateHandler>();
