@@ -83,6 +83,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1623739474452663913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7008762212966779701}
+  - component: {fileID: 7721939968293206084}
+  m_Layer: 0
+  m_Name: Diparador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7008762212966779701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623739474452663913}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.1, z: 0.284}
+  m_LocalScale: {x: 0.5813954, y: 0.5813954, z: 0.5813954}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 656534161593306290}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7721939968293206084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623739474452663913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63fafc4c96bf3c245abf5fdaae03a2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4198092108520459550
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +143,7 @@ GameObject:
   - component: {fileID: 8831004218900023672}
   - component: {fileID: 5102355951789248515}
   - component: {fileID: 2316533062235225045}
+  - component: {fileID: 981221774492379796}
   - component: {fileID: 7910371636056053022}
   - component: {fileID: 3436158768231694927}
   m_Layer: 0
@@ -253,6 +298,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 129
   interactionOrigin: {fileID: 6332716540991091921}
+--- !u!114 &981221774492379796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4198092108520459550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502edc01bf3fc1e428d66b7944f78300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyCost: 15
+  shootHandle: {fileID: 7008762212966779701}
+  projectilePrefab: {fileID: 1095482878121024850, guid: 3d4c3f0d7a2c92a4fadb9803f0f13978,
+    type: 3}
+  shootForce: 1000
 --- !u!54 &7910371636056053022
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -522,6 +584,7 @@ Transform:
   - {fileID: 143561270459030694}
   - {fileID: 6332716540991091921}
   - {fileID: 1687078675826992988}
+  - {fileID: 7008762212966779701}
   m_Father: {fileID: 8986658855720368251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6755922504973593382

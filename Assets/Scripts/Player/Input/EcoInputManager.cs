@@ -25,7 +25,7 @@ namespace ECO.Player
                 {"absorb", KeyCode.LeftShift},
                 {"irradiate", KeyCode.Q},
                 {"connect", KeyCode.F},
-                {"shoot", KeyCode.LeftControl},
+                {"shoot", KeyCode.M},
                 {"explosion", KeyCode.R},
                 {"float", KeyCode.Space},
                 {"jump", KeyCode.Space}

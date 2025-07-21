@@ -71,7 +71,9 @@ namespace ECO.Player
             {
                 {"absorb", GetComponent<AbsorberAbility>()},
                 {"irradiate", GetComponent<IrradiateAbility>()},
-                {"interact", GetComponent<InteractAbility>()}
+                {"interact", GetComponent<InteractAbility>()},
+                {"shoot", GetComponent<shootAbility>() },
+                {"shoot_mouse", GetComponent<shootAbility>() }
             };
         }
 
@@ -233,6 +235,14 @@ namespace ECO.Player
             {
                 ExecuteAbility("interact");
                 
+            }
+
+            // Interact - habilidad de activación
+            if (inputManager.IsPressed("shoot") || inputManager.IsPressed("shoot_mouse"))
+            {
+                Debug.Log("Disparo");
+                ExecuteAbility("shoot");
+
             }
         }
 
