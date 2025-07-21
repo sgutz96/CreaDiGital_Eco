@@ -314,7 +314,7 @@ MonoBehaviour:
   shootHandle: {fileID: 7008762212966779701}
   projectilePrefab: {fileID: 1095482878121024850, guid: 3d4c3f0d7a2c92a4fadb9803f0f13978,
     type: 3}
-  shootForce: 1000
+  shootForce: 20
 --- !u!54 &7910371636056053022
 Rigidbody:
   m_ObjectHideFlags: 0
