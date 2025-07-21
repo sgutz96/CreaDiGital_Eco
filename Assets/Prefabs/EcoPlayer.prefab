@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3436158768231694927}
   m_Layer: 0
   m_Name: EcoPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -435,7 +435,7 @@ MonoBehaviour:
   petrifiedLayer:
     serializedVersion: 2
     m_Bits: 256
-  FrailejonMat: {fileID: 2100000, guid: a70e34263a7aed241834b155feef3265, type: 2}
+  FrailejonMat: {fileID: 2100000, guid: 34b0c2b9323aea74fadbe0a9ef5b9c8f, type: 2}
 --- !u!1 &4711655077714725321
 GameObject:
   m_ObjectHideFlags: 0
